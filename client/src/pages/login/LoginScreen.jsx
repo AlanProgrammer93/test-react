@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import './LoginScreen.css'
 import clientAxios from '../../utils/axios';
 import MessageError from '../../components/messageError/MessageError';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addUser } from '../../store/userReducer';
 
 const loginData = {
     username: "",
@@ -9,6 +12,9 @@ const loginData = {
 };
 
 const LoginScreen = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const [showMessageError, setShowMessageError] = useState("")
     const [login, setLogin] = useState(loginData);
     const { username, password } = login;
@@ -35,10 +41,9 @@ const LoginScreen = () => {
                 }
             )
                 .then(res => {
-
                     localStorage.setItem('token', res.data.token)
-                    console.log(res.data);
-                    // TODO: logica para guardar en local storage y en redux y redirigir al home
+                    dispatch(addUser(res.data.user));
+                    navigate("/");
                 })
                 .catch(err => {
                     setShowMessageError(err.response.data.msg)
