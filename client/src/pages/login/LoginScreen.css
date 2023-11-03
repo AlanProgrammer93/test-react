@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--color-primary);
+}
+
+.form_container {
+    position: relative;
+    width: 350px;
+    height: 340px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-primary);
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.form h2 {
+    color: #fff;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form .inputBox input {
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.15);
+    padding: 6px 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.form .inputBox input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form .inputBox {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form .inputBox a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.form .inputBox a:nth-child(2) {
+    text-decoration: underline;
+}
+
+.form .inputBox button {
+    background: var(--color-primary-dark);
+    font-weight: 500;
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--color-primary-dark);
+    padding: 6px 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
