@@ -4,13 +4,15 @@ import clientAxios from '../../utils/axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { addOrders } from '../../store/orderReducer';
 import CardOrder from '../../components/cardOrder/CardOrder';
+import MessageOK from '../../components/messageOK/MessageOK';
 
 const HomeScreen = () => {
+  const [showMessageOK, setShowMessageOK] = useState("")
+
   const [loading, setLoading] = useState(false)
   const dispatch = useDispatch();
 
   const { orders } = useSelector((state) => state.order);
-  console.log(orders);
 
   useEffect(() => {
     getOrders()
@@ -42,10 +44,13 @@ const HomeScreen = () => {
         <p className='title_list'>Listado de Pedidos</p>
         {
           orders.map((order, i) => (
-            <CardOrder key={order._id} order={order} />
+            <CardOrder key={order._id} order={order} dispatch={dispatch} setShowMessageOK={setShowMessageOK} />
           ))
         }
       </div>
+      {
+        showMessageOK && <MessageOK text={showMessageOK} />
+      }
     </div>
   )
 }

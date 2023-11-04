@@ -25,6 +25,9 @@ const orderSchema = new Schema({
         default: "En espera",
         enum: ["En espera", "Enviado", "Entregado"]
     }
+},
+{
+    timestamps: true
 });
 
 module.exports = mongoose.model('Order', orderSchema);

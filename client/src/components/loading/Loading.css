@@ -5,8 +5,8 @@
     transform: translate(-50%, -50%);
     background: #fff;
     box-shadow: var(--box-shadow);
-    min-height: 250px;
-    width: 350px;
+    min-height: 200px;
+    width: 300px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
 }
 
 .loadingContainer .loadingBackground {
-    background: var(--color-secondary-medium);
+    background: var(--color-primary);
     width: 55px;
     height: 55px;
     border-radius: 50%;

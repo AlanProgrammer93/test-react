@@ -8,6 +8,9 @@
   --color-primary: #A99FFF;
   --color-primary-dark: #29235C;
   --color-background: #2b2b2b;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -17,4 +20,14 @@
 .scrollbar::-webkit-scrollbar-thumb {
   background: #aeaeafa1;
   border-radius: 5px;
+}
+
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  bottom: 0;
+  z-index: 9999999999;
 }

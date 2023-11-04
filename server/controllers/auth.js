@@ -99,7 +99,7 @@ exports.login = async (req, res) => {
                 });
         } else {
             return res.status(400).json({
-                msg: 'Todos los campos son requeridos.'
+                msg: 'Usuario o Contraseña Incorrecta.'
             });
         }
     } catch (error) {
